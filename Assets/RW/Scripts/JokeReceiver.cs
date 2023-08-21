@@ -1,9 +1,13 @@
+﻿
 
 using UnityEngine;
+//1
 using UnityEngine.Playables;
 
+//2
 public class JokeReceiver : MonoBehaviour, INotificationReceiver
 {
+    //1
     [SerializeField]
     private Typewriter dialogAnimator;
 
@@ -11,21 +15,20 @@ public class JokeReceiver : MonoBehaviour, INotificationReceiver
     public void OnNotify(Playable origin, INotification notification, object context)
     {
         //2
-        if (notification is JokeMarker dialog && dialogAnimator != null)
+        if (notification is JokeMarker dialogue && dialogAnimator != null)
         {
             //3
-            var newdialog = new Dialog
+            var newDialogue = new Dialog
             {
                 //4
-                Quote = dialog.Quote,
-                PausePerLetter = dialog.PausePerLetter,
-                NewPage = dialog.StartNewPage,
-                NewLine = dialog.StartNewLine
+                Quote = dialogue.Quote,
+                PausePerLetter = dialogue.PausePerLetter,
+                NewPage = dialogue.StartNewPage,
+                NewLine = dialogue.StartNewLine
             };
 
             //5
-            dialogAnimator.AddDialog(newdialog);
+            dialogAnimator.AddDialog(newDialogue);
         }
     }
-
 }

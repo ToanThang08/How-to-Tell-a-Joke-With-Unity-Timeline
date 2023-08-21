@@ -1,9 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+﻿
+
 using UnityEngine;
+//1
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
 
+//2
 public class JokeMarker : Marker, INotification
 {
     //1
@@ -28,5 +30,4 @@ public class JokeMarker : Marker, INotification
     public bool StartNewLine => startNewLine;
 
     public PropertyName id => new PropertyName();
-
 }
