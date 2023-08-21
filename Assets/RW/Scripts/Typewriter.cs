@@ -52,8 +52,22 @@ public class Typewriter : MonoBehaviour
         textBox.maxVisibleCharacters = totalVisibleCharacters;
         yield break;
     }
+
     private void OnEnable()
     {
         StartCoroutine(Reveal(0));
     }
+
+    public class Dialog
+    {
+        //1
+        public string Quote;
+        //2
+        public float PausePerLetter;
+        //3
+        public bool NewPage;
+        //4
+        public bool NewLine;
+    }
+
 }
